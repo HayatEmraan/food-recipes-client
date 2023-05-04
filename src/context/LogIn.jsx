@@ -1,6 +1,9 @@
 import { Button, Label, TextInput } from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
+import googleIncons from '../assets/signUp/GButton.jpg'
+import gitubIncons from '../assets/signUp/github.png'
+
 
 const LogIn = () => {
   return (
@@ -40,6 +43,12 @@ const LogIn = () => {
         </div>
         <Button type="submit">Submit</Button>
       </form>
+      <div className="mr-40">
+        <div className="flex w-48 gap-2 mx-auto mt-4">
+          <img className="cursor-pointer" src={googleIncons} alt="google" />
+          <img className="cursor-pointer" src={gitubIncons} alt="github" />
+          </div>
+      </div>
     </div>
   );
 };

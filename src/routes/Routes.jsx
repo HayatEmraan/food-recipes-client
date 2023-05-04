@@ -21,14 +21,6 @@ const router = createBrowserRouter([
         element: <h2>coming soon</h2>,
       },
       {
-        path: "/about",
-        element: <h2>About</h2>,
-      },
-      {
-        path: "/contact",
-        element: <h3>nothing</h3>,
-      },
-      {
         path: "/login",
         element: <LogIn />,
       },

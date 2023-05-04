@@ -1,6 +1,9 @@
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
+import googleIncons from "../assets/signUp/GButton.jpg";
+import gitubIncons from "../assets/signUp/github.png";
+
 
 const Register = () => {
   return (
@@ -43,7 +46,7 @@ const Register = () => {
         <div className="flex items-center gap-2">
           <Checkbox id="agree" />
           <Label htmlFor="agree">
-            I agree with the {" "}
+            I agree with the{" "}
             <a
               href="/forms"
               className="text-blue-600 hover:underline dark:text-blue-500"
@@ -64,6 +67,12 @@ const Register = () => {
         </div>
         <Button type="submit">Register new account</Button>
       </form>
+      <div className="mr-48">
+        <div className="flex w-48 gap-2 mx-auto mt-4">
+          <img className="cursor-pointer" src={googleIncons} alt="google" />
+          <img className="cursor-pointer" src={gitubIncons} alt="github" />
+        </div>
+      </div>
     </div>
   );
 };
