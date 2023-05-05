@@ -83,7 +83,7 @@ const LogIn = () => {
         </div>
         <Button type="submit">Submit</Button>
       </form>
-      <div className="mr-40">
+      <div className="mr-48">
         <div className="flex w-48 gap-2 mx-auto mt-4">
           <img
             onClick={handleGoogleSignIn}

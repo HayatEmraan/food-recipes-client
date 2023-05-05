@@ -12,12 +12,12 @@ const Header = () => {
   return (
     <div className="container mx-auto">
       <Navbar fluid={true} rounded={true}>
-        <Navbar.Brand href="/">
+        <Link to="/" className="flex">
           <img src={logo} className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
             Recipes
           </span>
-        </Navbar.Brand>
+        </Link>
         <div className="flex md:order-2">
           {user ? (
             <div className="flex items-center">
@@ -29,7 +29,7 @@ const Header = () => {
               <Button>LogIn</Button>
             </Link>
           )}
-          <Navbar.Toggle />
+          <Navbar.Toggle className="ml-2"/>
         </div>
         <Navbar.Collapse>
           <Link to="/">Home</Link>

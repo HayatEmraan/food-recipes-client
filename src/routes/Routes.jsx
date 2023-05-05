@@ -25,7 +25,8 @@ const router = createBrowserRouter([
             <Blog />
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/v3/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://food-recipe-web.vercel.app/v3/${params.id}`),
       },
       {
         path: "/login",

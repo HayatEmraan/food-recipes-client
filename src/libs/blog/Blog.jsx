@@ -16,7 +16,7 @@ const Blog = () => {
   const [bio, setBio] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/v4/${id}`)
+    fetch(`https://food-recipe-web.vercel.app/v4/${id}`)
       .then((res) => res.json())
       .then((data) => setBio(data));
   }, []);
@@ -40,7 +40,7 @@ const Blog = () => {
             </button>
           </div>
         </div>
-        <p className="my-8 text-lg">{blog.description}</p>
+        <p className="my-8 text-lg p-2">{blog.description}</p>
         {blog.features &&
           blog.features.map((feature) => {
             return (
@@ -52,7 +52,7 @@ const Blog = () => {
       </div>
       <div className="mt-12 mb-4">
         <Card>
-          <div className="flex gap-4">
+          <div className="lg:flex gap-4">
             <div>
               <img
                 className="h-40 rounded-lg"
@@ -82,7 +82,7 @@ const Blog = () => {
               <h2 className="text-lg font-bold text-gray-600">
                 More From {bio && bio.name}
               </h2>
-              <div className="grid grid-cols-3 gap-4 my-8">
+              <div className="lg:grid grid-cols-3 gap-4 my-8">
                 <More blog={blog} />
                 <More blog={blog} />
                 <More blog={blog} />

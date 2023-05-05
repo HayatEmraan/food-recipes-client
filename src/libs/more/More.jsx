@@ -6,7 +6,7 @@ const More = (props) => {
     const { name, description, image, date, like, publishedBy } = props.blog;
     return (
       <div>
-          <div className="max-w-lg">
+          <div className="max-w-lg mb-2">
             <Card>
               <img className="rounded w-full h-96" src={image} alt="" />
               <div className="flex justify-between">

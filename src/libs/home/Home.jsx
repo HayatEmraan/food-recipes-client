@@ -5,23 +5,26 @@ import banner2 from "../../assets/banner/banner3.avif";
 import banner3 from "../../assets/banner/banner4.avif";
 import { Link } from "react-router-dom";
 import { Card, Carousel } from "flowbite-react";
-import { CalendarIcon, HeartIcon, UserCircleIcon } from "@heroicons/react/24/solid";
-
+import {
+  CalendarIcon,
+  HeartIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/solid";
 
 const Home = () => {
   const [recipes, setRecipes] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/v2")
+    fetch("https://food-recipe-web.vercel.app/v2")
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);
 
   return (
     <div className="container mx-auto">
-      <div className="flex flex-row-reverse items-center gap-4">
+      <div className="lg:flex flex-row-reverse items-center gap-4">
         <div>
           <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-            <Carousel style={{ width: "600px" }}>
+            <Carousel className="md:w-full lg:w-[600px]">
               <img src={banner} alt="..." />
               <img src={banner1} alt="..." />
               <img src={banner2} alt="..." />
@@ -29,7 +32,7 @@ const Home = () => {
             </Carousel>
           </div>
         </div>
-        <div>
+        <div className="md:px-[2]">
           <h2 className="text-lg text-green-600 font-semibold">WELCOME</h2>
           <p className="text-3xl font-bold mb-8">
             Easy recipes <br /> for any occasion
@@ -38,7 +41,9 @@ const Home = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
             impedit libero aliquid tempore sequi voluptates excepturi amet odit?
             Nihil voluptates maiores dicta, neque eveniet qui quibusdam placeat
-            inventore officiis doloremque? Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil harum nobis saepe esse quia voluptas.
+            inventore officiis doloremque? Lorem ipsum dolor sit amet. Lorem
+            ipsum dolor sit amet consectetur, adipisicing elit. Nihil harum
+            nobis saepe esse quia voluptas.
           </p>
           <div className="mt-8">
             <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded me-4">
@@ -58,7 +63,7 @@ const Home = () => {
             <Link className="text-green-600">Show all receipes</Link>
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-4 my-8">
+        <div className="lg:grid grid-cols-3 gap-4 my-8">
           {recipes &&
             recipes.map((item) => {
               return (
@@ -92,7 +97,12 @@ const Home = () => {
                           <p className="ml-1">{item.like}</p>
                         </div>
                         <div>
-                          <Link to={`/blog/${item.id}`} className="border px-2 py-1 rounded-lg bg-black text-white font-semibold"><button>Read More</button></Link>
+                          <Link
+                            to={`/blog/${item.id}`}
+                            className="border px-2 py-1 rounded-lg bg-black text-white font-semibold"
+                          >
+                            <button>Read More</button>
+                          </Link>
                         </div>
                       </div>
                     </Card>
