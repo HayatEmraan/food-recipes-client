@@ -7,6 +7,7 @@ import LogIn from "../context/LogIn";
 import Register from "../context/Register";
 import ErrorPage from "../libs/404/ErrorPage";
 import Blog from "../libs/blog/Blog";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -19,8 +20,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog/:id",
-        element: <Blog/>,
-        loader: ({params}) => fetch(`http://localhost:5000/v3/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <Blog />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) => fetch(`http://localhost:5000/v3/${params.id}`),
       },
       {
         path: "/login",
