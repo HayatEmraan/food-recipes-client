@@ -27,6 +27,9 @@ const Register = () => {
     const email = middle.email.value;
     const password = middle.password.value;
     const password1 = middle.password1.value;
+    const photo = middle.photo.value;
+    const name = middle.name.value;
+    console.log(photo, name);
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
       setError("Invalid email, Enter your valid email address");
       return;
@@ -52,23 +55,53 @@ const Register = () => {
       >
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="email2" value="Your Email" />
+            <Label htmlFor="name" value="Your Name" />
           </div>
           <TextInput
-            id="email2"
-            type="email" name="email"
-            placeholder="Your Email Address"
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Your Name"
             required={true}
             shadow={true}
           />
         </div>
         <div>
           <div className="mb-2 block">
+            <Label htmlFor="email2" value="Your Email" />
+          </div>
+          <TextInput
+            id="email2"
+            type="email"
+            name="email"
+            placeholder="Your Email Address"
+            required={true}
+            shadow={true}
+          />
+        </div>
+        
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="photo" value="Your Photo URL" />
+          </div>
+          <TextInput
+            id="photo"
+            type="text"
+            name="photo"
+            placeholder="Your Photo URL"
+            required={true}
+            shadow={true}
+          />
+        </div>
+        
+        <div>
+          <div className="mb-2 block">
             <Label htmlFor="password2" value="Your password" />
           </div>
           <TextInput
             id="password2"
-            type="password" name="password"
+            type="password"
+            name="password"
             required={true}
             shadow={true}
           />
@@ -79,7 +112,8 @@ const Register = () => {
           </div>
           <TextInput
             id="repeat-password"
-            type="password" name="password1"
+            type="password"
+            name="password1"
             required={true}
             shadow={true}
           />

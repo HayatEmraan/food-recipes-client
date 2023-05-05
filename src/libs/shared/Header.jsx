@@ -29,13 +29,13 @@ const Header = () => {
               <Button>LogIn</Button>
             </Link>
           )}
-          <Navbar.Toggle className="ml-2"/>
+          <Navbar.Toggle className="ml-2" />
         </div>
         <Navbar.Collapse>
           <Link to="/">Home</Link>
+          <Link to="/blog">Blog</Link>
           <Link to="/about">About</Link>
           <Link to="/service">Services</Link>
-          <Link to="/pricing">Pricing</Link>
           <Link to="/contact">Contact</Link>
         </Navbar.Collapse>
       </Navbar>

@@ -55,9 +55,11 @@ const Home = () => {
             <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded me-4">
               About Us
             </button>
-            <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-              Show All Recipes
-            </button>
+            <Link to="/blog">
+              <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                Blog
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -66,7 +68,7 @@ const Home = () => {
           <h2 className="text-3xl font-semibold">What's new on our table</h2>
           <p>
             Do you want to see more?{" "}
-            <Link className="text-green-600">Show all receipes</Link>
+            <Link to="/blog" className="text-green-600">Show all Blog</Link>
           </p>
         </div>
         <div className="lg:grid grid-cols-3 gap-4 my-8">
