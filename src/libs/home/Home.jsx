@@ -35,15 +35,21 @@ const Home = () => {
         <div className="md:px-[2]">
           <h2 className="text-lg text-green-600 font-semibold">WELCOME</h2>
           <p className="text-3xl font-bold mb-8">
-            Easy recipes <br /> for any occasion
+            Easy recipes <br />
+            for{" "}
+            <span className="underline decoration-pink-500/30 text-4xl text-purple-600">
+              {" "}
+              any occasion
+            </span>
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-            impedit libero aliquid tempore sequi voluptates excepturi amet odit?
-            Nihil voluptates maiores dicta, neque eveniet qui quibusdam placeat
-            inventore officiis doloremque? Lorem ipsum dolor sit amet. Lorem
-            ipsum dolor sit amet consectetur, adipisicing elit. Nihil harum
-            nobis saepe esse quia voluptas.
+            <span className="text-2xl text-green-600 underline">Welcome</span>{" "}
+            to our food recipes website, your go-to destination for delicious
+            and easy-to-make recipes that are sure to satisfy your taste buds.{" "}
+            <br /> Browse through our collection of breakfast, lunch, dinner,
+            and dessert recipes that are perfect for any occasion. From classic
+            comfort foods to international cuisines, our recipes are sure to
+            excite your palate and bring some variety to your meal plan.
           </p>
           <div className="mt-8">
             <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded me-4">
