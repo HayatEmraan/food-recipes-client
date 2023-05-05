@@ -8,11 +8,9 @@ import { authContext } from "./Auth";
 
 const LogIn = () => {
   const { signIn, signInWithGoogle, signInWithGithub } = useContext(authContext);
-  console.log(signIn);
   const location = useLocation();
   const from = location?.state?.pathname || '/';
   const navigate = useNavigate();
-  console.log(location);
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const handleLogIn = (e) => {
