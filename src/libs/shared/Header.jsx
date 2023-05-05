@@ -6,7 +6,6 @@ import { authContext } from "../../context/Auth";
 import Loading from "../loading/Loading";
 const Header = () => {
   const { user, logOut, loading } = useContext(authContext);
-  console.log(user);
   if (loading) {
     return <Loading/>;
   }

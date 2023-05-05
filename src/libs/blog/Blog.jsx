@@ -14,7 +14,7 @@ const Blog = () => {
   const blog = useLoaderData();
   const { id } = useParams();
   const [bio, setBio] = useState(null);
-  console.log(id);
+
   useEffect(() => {
     fetch(`http://localhost:5000/v4/${id}`)
       .then((res) => res.json())

@@ -5,7 +5,7 @@ const FooterOut = () => {
     return (
       <div className='container mx-auto'>
         <Footer container={true}>
-          <Footer.Copyright href="#" by="Flowbite™" year={2022} />
+          <Footer.Copyright href="#" by="Food Recipes™" year={2022} />
           <Footer.LinkGroup>
             <Footer.Link href="#">About</Footer.Link>
             <Footer.Link href="#">Privacy Policy</Footer.Link>

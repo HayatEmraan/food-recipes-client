@@ -1,10 +1,12 @@
+import { Button, Spinner } from 'flowbite-react';
 import React from 'react';
 
 const Loading = () => {
     return (
-        <div className='container mx-auto'>
-            <h3>Loading...</h3>
-        </div>
+      <div className="container mx-auto">
+          <Spinner aria-label="Alternate spinner example" />
+          <span className="pl-3">Loading...</span>
+      </div>
     );
 };
 

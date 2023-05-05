@@ -3,7 +3,6 @@ import { Card } from 'flowbite-react';
 import React from 'react';
 
 const More = (props) => {
-    console.log(props);
     const { name, description, image, date, like, publishedBy } = props.blog;
     return (
       <div>

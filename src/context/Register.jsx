@@ -26,12 +26,17 @@ const Register = () => {
     const middle = e.target;
     const email = middle.email.value;
     const password = middle.password.value;
+    const password1 = middle.password1.value;
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
       setError("Invalid email, Enter your valid email address");
       return;
     }
     if (password.length < 6) {
       setError("Password must be at least 6 characters");
+      return;
+    }
+    if (password!== password1) {
+      setError("Passwords do not match");
       return;
     }
     createUser(email, password)
@@ -74,7 +79,7 @@ const Register = () => {
           </div>
           <TextInput
             id="repeat-password"
-            type="password"
+            type="password" name="password1"
             required={true}
             shadow={true}
           />

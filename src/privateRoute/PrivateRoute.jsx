@@ -5,15 +5,15 @@ import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(authContext);
-  const location = useLocation();
-  console.log(location);
+    const location = useLocation();
+    
   if (loading) {
-    return <Loading />;
+    return;
   }
   if (user) {
     return children;
   } else {
-      return <Navigate to="/login" state={location} replace={true} />;
+      return <Navigate to="/login" state={location} replace />;
   }
 };
 
