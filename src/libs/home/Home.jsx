@@ -38,7 +38,7 @@ const Home = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
             impedit libero aliquid tempore sequi voluptates excepturi amet odit?
             Nihil voluptates maiores dicta, neque eveniet qui quibusdam placeat
-            inventore officiis doloremque? lorem50
+            inventore officiis doloremque? Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil harum nobis saepe esse quia voluptas.
           </p>
           <div className="mt-8">
             <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded me-4">
