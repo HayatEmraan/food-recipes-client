@@ -8,6 +8,7 @@ import Register from "../context/Register";
 import ErrorPage from "../libs/404/ErrorPage";
 import Blog from "../libs/blog/Blog";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import BlogV2 from "../libs/blog/BlogV2";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/blog",
+        element: <BlogV2 />,
+        loader: () => fetch("http://localhost:5000/v5"),
       },
       {
         path: "/blog/:id",
