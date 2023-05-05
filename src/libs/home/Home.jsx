@@ -5,7 +5,7 @@ import banner2 from "../../assets/banner/banner3.avif";
 import banner3 from "../../assets/banner/banner4.avif";
 import { Link } from "react-router-dom";
 import { Card, Carousel } from "flowbite-react";
-import { BeakerIcon, CalendarIcon, HeartIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { CalendarIcon, HeartIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 
 
 const Home = () => {
@@ -61,7 +61,6 @@ const Home = () => {
         <div className="grid grid-cols-3 gap-4 my-8">
           {recipes &&
             recipes.map((item) => {
-              console.log(item);
               return (
                 <div key={item.id}>
                   <div className="max-w-lg">
@@ -93,7 +92,7 @@ const Home = () => {
                           <p className="ml-1">{item.like}</p>
                         </div>
                         <div>
-                          <Link className="border px-2 py-1 rounded-lg bg-black text-white font-semibold"><button>Read More</button></Link>
+                          <Link to={`/blog/${item.id}`} className="border px-2 py-1 rounded-lg bg-black text-white font-semibold"><button>Read More</button></Link>
                         </div>
                       </div>
                     </Card>

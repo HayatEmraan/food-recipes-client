@@ -6,6 +6,7 @@ import Home from "../libs/home/Home";
 import LogIn from "../context/LogIn";
 import Register from "../context/Register";
 import ErrorPage from "../libs/404/ErrorPage";
+import Blog from "../libs/blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,9 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/blog",
-        element: <h2>coming soon</h2>,
+        path: "/blog/:id",
+        element: <Blog/>,
+        loader: ({params}) => fetch(`http://localhost:5000/v3/${params.id}`),
       },
       {
         path: "/login",
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <ErrorPage/>,
+        element: <ErrorPage />,
       },
     ],
   },
