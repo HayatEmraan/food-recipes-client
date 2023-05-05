@@ -20,7 +20,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto p-2 lg:p-0">
       <div className="lg:flex flex-row-reverse items-center gap-4">
         <div>
           <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
@@ -32,7 +32,7 @@ const Home = () => {
             </Carousel>
           </div>
         </div>
-        <div className="md:px-[2]">
+        <div className="p-4 lg:p-0">
           <h2 className="text-lg text-green-600 font-semibold">WELCOME</h2>
           <p className="text-3xl font-bold mb-8">
             Easy recipes <br />
@@ -76,7 +76,7 @@ const Home = () => {
             recipes.map((item) => {
               return (
                 <div key={item.id}>
-                  <div className="max-w-lg">
+                  <div className="max-w-lg mb-4 lg:mb-0">
                     <Card>
                       <img
                         className="rounded w-full h-96"

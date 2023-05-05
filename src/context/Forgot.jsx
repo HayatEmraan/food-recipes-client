@@ -18,7 +18,7 @@ const Forgot = () => {
   return (
     <div>
       <form
-        className="flex flex-col gap-4 max-w-lg mx-auto"
+        className="flex flex-col gap-4 p-4 lg:p-0 max-w-lg mx-auto"
         onSubmit={handleForgotPassword}
       >
         <div>

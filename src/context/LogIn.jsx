@@ -46,7 +46,7 @@ const LogIn = () => {
   return (
     <div className="container mx-auto">
       <form
-        className="flex flex-col gap-4 max-w-lg mx-auto"
+        className="flex flex-col gap-4 max-w-lg mx-auto p-4 lg:p-0"
         onSubmit={handleLogIn}
       >
         <div>
@@ -110,7 +110,7 @@ const LogIn = () => {
         <Button type="submit">Submit</Button>
       </form>
       <div className="mr-48">
-        <div className="flex w-48 gap-2 mx-auto mt-4">
+        <div className="flex w-44  lg:w-48 gap-2 mx-auto mt-4">
           <img
             onClick={handleGoogleSignIn}
             className="cursor-pointer"
