@@ -43,7 +43,7 @@ const Home = () => {
             </span>
           </p>
           <p>
-            <span className="text-2xl text-green-600 underline">Welcome</span>{" "}
+            <span className="text-2xl text-pink-500">Welcome</span>{" "}
             to our food recipes website, your go-to destination for delicious
             and easy-to-make recipes that are sure to satisfy your taste buds.{" "}
             <br /> Browse through our collection of breakfast, lunch, dinner,
@@ -66,7 +66,7 @@ const Home = () => {
       <div className="mt-12">
         <div className="flex justify-between">
           <h2 className="text-3xl font-semibold">What's new on our table</h2>
-          <p>
+          <p className="hidden lg:flex">
             Do you want to see more?{" "}
             <Link to="/blog" className="text-green-600">Show all Blog</Link>
           </p>

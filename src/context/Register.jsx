@@ -7,7 +7,7 @@ import { authContext } from "./Auth";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 
 const Register = () => {
-  const { signInWithGithub, signInWithGoogle, createUser } =
+  const { signInWithGithub, signInWithGoogle, createUser, userUpdateProfile } =
     useContext(authContext);
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
@@ -31,7 +31,6 @@ const Register = () => {
     const password1 = middle.password1.value;
     const photo = middle.photo.value;
     const name = middle.name.value;
-    console.log(photo, name);
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
       setError("Invalid email, Enter your valid email address");
       return;
@@ -45,10 +44,12 @@ const Register = () => {
       return;
     }
     createUser(email, password)
-      .then((result) => setUser(result.user))
+      .then((result) => {
+        setUser(result.user);
+        userUpdateProfile(result.user, name, photo);
+      })
       .catch((error) => console.log(error));
   };
-  console.log(user);
   return (
     <div className="container mx-auto">
       <form

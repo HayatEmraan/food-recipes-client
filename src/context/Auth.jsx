@@ -8,6 +8,7 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
+  updateProfile,
 } from "firebase/auth";
 import { useEffect } from "react";
 
@@ -55,6 +56,12 @@ const Auth = ({ children }) => {
   const forgotPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
   }
+  const userUpdateProfile = (userResult, name, photo) => {
+    updateProfile(userResult, {
+      displayName: name,
+      photoURL: photo,
+    })
+  }
     // logout
     const logOut = () => {
       return auth.signOut();
@@ -68,6 +75,7 @@ const Auth = ({ children }) => {
       user,
       loading,
       forgotPassword,
+      userUpdateProfile,
     };
   return (
     <authContext.Provider value={userInfo}>

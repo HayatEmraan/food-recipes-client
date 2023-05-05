@@ -5,7 +5,6 @@ import { useLoaderData } from "react-router-dom";
 
 const BlogV2 = () => {
   const blog = useLoaderData();
-  console.log(blog);
   return (
     <div className="container mx-auto lg:grid grid-cols-3 gap-4 my-3">
       {blog &&
