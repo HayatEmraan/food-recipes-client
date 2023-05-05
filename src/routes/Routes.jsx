@@ -9,6 +9,7 @@ import ErrorPage from "../libs/404/ErrorPage";
 import Blog from "../libs/blog/Blog";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import BlogV2 from "../libs/blog/BlogV2";
+import Forgot from "../context/Forgot";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: '/forgot',
+        element: <Forgot/>,
       },
       {
         path: "*",

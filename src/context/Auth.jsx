@@ -5,6 +5,7 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
@@ -51,6 +52,9 @@ const Auth = ({ children }) => {
     });
     return unsubscribe;
   }, []);
+  const forgotPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  }
     // logout
     const logOut = () => {
       return auth.signOut();
@@ -63,6 +67,7 @@ const Auth = ({ children }) => {
       logOut,
       user,
       loading,
+      forgotPassword,
     };
   return (
     <authContext.Provider value={userInfo}>

@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import googleIncons from "../assets/signUp/GButton.jpg";
 import gitubIncons from "../assets/signUp/github.png";
 import { authContext } from "./Auth";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 
 const Register = () => {
   const { signInWithGithub, signInWithGoogle, createUser } =
     useContext(authContext);
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
-
+  const [eyeActive, setEyeActive] = useState(false);
+  const [repeatActive, setRepeatActive] = useState(false);
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => setUser(result.user))
@@ -38,7 +40,7 @@ const Register = () => {
       setError("Password must be at least 6 characters");
       return;
     }
-    if (password!== password1) {
+    if (password !== password1) {
       setError("Passwords do not match");
       return;
     }
@@ -57,14 +59,16 @@ const Register = () => {
           <div className="mb-2 block">
             <Label htmlFor="name" value="Your Name" />
           </div>
-          <TextInput
-            id="name"
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required={true}
-            shadow={true}
-          />
+          <div>
+            <TextInput
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required={true}
+              shadow={true}
+            />
+          </div>
         </div>
         <div>
           <div className="mb-2 block">
@@ -74,12 +78,13 @@ const Register = () => {
             id="email2"
             type="email"
             name="email"
+            addon="@"
             placeholder="Your Email Address"
             required={true}
             shadow={true}
           />
         </div>
-        
+
         <div>
           <div className="mb-2 block">
             <Label htmlFor="photo" value="Your Photo URL" />
@@ -93,30 +98,58 @@ const Register = () => {
             shadow={true}
           />
         </div>
-        
+
         <div>
           <div className="mb-2 block">
             <Label htmlFor="password2" value="Your password" />
           </div>
-          <TextInput
-            id="password2"
-            type="password"
-            name="password"
-            required={true}
-            shadow={true}
-          />
+          <div className="relative">
+            <TextInput
+              className="absolute w-full"
+              id="password2"
+              type={eyeActive ? "text" : "password"}
+              name="password"
+              required={true}
+              shadow={true}
+            />
+            <div
+              style={{ top: "10px", right: "10px" }}
+              className="absolute right-0 cursor-pointer "
+              onClick={() => setEyeActive(!eyeActive)}
+            >
+              {eyeActive ? (
+                <EyeIcon className="w-6 h-6" />
+              ) : (
+                <EyeSlashIcon className="w-6 h-6" />
+              )}
+            </div>
+          </div>
         </div>
         <div>
-          <div className="mb-2 block">
+          <div className="mb-2 block mt-8">
             <Label htmlFor="repeat-password" value="Repeat password" />
           </div>
-          <TextInput
-            id="repeat-password"
-            type="password"
-            name="password1"
-            required={true}
-            shadow={true}
-          />
+          <div className="relative">
+            <TextInput
+              className="absolute w-full"
+              id="repeat-password"
+              type={repeatActive ? "text" : "password"}
+              name="password1"
+              required={true}
+              shadow={true}
+            />
+            <div
+              style={{ top: "10px", right: "10px" }}
+              className="absolute right-0 cursor-pointer "
+              onClick={() => setRepeatActive(!repeatActive)}
+            >
+              {repeatActive ? (
+                <EyeIcon className="w-6 h-6" />
+              ) : (
+                <EyeSlashIcon className="w-6 h-6" />
+              )}
+            </div>
+          </div>
         </div>
         <div className="flex items-center gap-2">
           <Checkbox id="agree" />
@@ -135,7 +168,7 @@ const Register = () => {
           <p>
             <small>
               Already have an account?{" "}
-              <Link to="/login" className="text-red-500">
+              <Link to="/login" className="text-red-500 hover:underline">
                 Login
               </Link>
             </small>
