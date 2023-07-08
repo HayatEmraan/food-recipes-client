@@ -1,14 +1,19 @@
 import { Button, Navbar } from "flowbite-react";
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/logo/logo.jpg";
 import { authContext } from "../../context/Auth";
 import Loading from "../loading/Loading";
 const Header = () => {
   const { user, logOut, loading } = useContext(authContext);
   if (loading) {
-    return <Loading/>;
+    return <Loading />;
   }
+  const [isActive, setActive] = useState(true);
+  const location = useLocation();
+  useEffect(() => {
+    setActive(false);
+  }, [location.pathname]);
   return (
     <div className="container mx-auto">
       <Navbar fluid={true} rounded={true}>
@@ -29,15 +34,17 @@ const Header = () => {
               <Button>LogIn</Button>
             </Link>
           )}
-          <Navbar.Toggle className="ml-2" />
+          <Navbar.Toggle onClick={() => setActive(!isActive)} className="ml-2" />
         </div>
-        <Navbar.Collapse>
-          <Link to="/">Home</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/about">About</Link>
-          <Link to="/service">Services</Link>
-          <Link to="/contact">Contact</Link>
-        </Navbar.Collapse>
+        {isActive && (
+          <Navbar.Collapse>
+            <Link to="/">Home</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/about">About</Link>
+            <Link to="/service">Services</Link>
+            <Link to="/contact">Contact</Link>
+          </Navbar.Collapse>
+        )}
       </Navbar>
     </div>
   );
